@@ -1,0 +1,5 @@
+﻿        /// <summary>
+        /// Related attribute: xts_lookupid. Lookup to entity: xts_entity.
+        /// </summary>
+        public static IEntityWrapper<EntitySchemaName> GetUserLabel(this IEntityWrapperRelation<MyEntity> wrapper, IColumnSet<EntitySchemaName> columnSet)
+            => wrapper.GetRelated(e => e.Xts_SchemaLookupId, columnSet);

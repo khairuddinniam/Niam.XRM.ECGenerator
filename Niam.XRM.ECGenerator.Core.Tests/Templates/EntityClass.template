@@ -1,0 +1,22 @@
+﻿    [System.Runtime.Serialization.DataContractAttribute]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("businessunit")]
+	public class BusinessUnit : Entity
+    {
+        public const string EntityLogicalName = "businessunit";
+        public BusinessUnit() : base(EntityLogicalName)
+        {
+        }
+
+        [System.ComponentModel.DataAnnotations.Schema.Column("businessunitid")]
+        public override Guid Id
+        {
+            get { return base.Id; }
+            set
+            {
+                base.Id = value;
+                this["businessunitid"] = value;
+            }
+        }
+
+
+    }

@@ -1,0 +1,5 @@
+﻿        /// <summary>
+        /// {{extra-info}}Related attribute: {{attr-logical-name}}. Lookup to entity: {{lookup-logical-name}}.
+        /// </summary>
+        public static IEntityWrapper<{{lookup-schema-name}}> {{method-name}}(this IEntityWrapperRelation<{{entity-schema-name}}> wrapper, IColumnSet<{{lookup-schema-name}}> columnSet)
+            => wrapper.GetRelated(e => e.{{attr-schema-name}}, columnSet);

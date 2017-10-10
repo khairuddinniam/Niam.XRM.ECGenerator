@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": "this-is-connection-string",
+  "namespace": "This.Is.A.Namespace",
+  "generateExtensions": true
+}

@@ -1,0 +1,4 @@
+﻿        public new static class Options
+        {
+{{enum-values}}
+        }

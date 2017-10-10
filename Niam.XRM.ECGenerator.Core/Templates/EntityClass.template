@@ -1,0 +1,22 @@
+﻿    [System.Runtime.Serialization.DataContractAttribute]
+    [Microsoft.Xrm.Sdk.Client.EntityLogicalNameAttribute("{{logical-name}}")]
+	public class {{schema-name}} : {{base-class}}
+    {
+        public const string EntityLogicalName = "{{logical-name}}";
+        public {{schema-name}}() : base(EntityLogicalName)
+        {
+        }
+
+        [System.ComponentModel.DataAnnotations.Schema.Column("{{primary-id-attribute}}")]
+        public override Guid Id
+        {
+            get { return base.Id; }
+            set
+            {
+                base.Id = value;
+                this["{{primary-id-attribute}}"] = value;
+            }
+        }
+{{attributes}}
+{{options-class}}
+    }

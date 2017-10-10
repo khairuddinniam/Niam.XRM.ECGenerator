@@ -1,0 +1,16 @@
+﻿        public new static class Options
+        {
+            public enum xts_status
+            {
+                Open = 1,
+                Release = 2
+
+            }
+            public enum xts_status
+            {
+                NewVehicle = 1234,
+                UsedVehicle = 5678
+
+            }
+
+        }

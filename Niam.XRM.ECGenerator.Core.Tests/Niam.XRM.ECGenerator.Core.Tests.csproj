@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <Copyright>2017</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ExtensionsGenerator\Templates\ExtensionClass.template" />
+    <EmbeddedResource Include="ExtensionsGenerator\Templates\GetRelatedMultiLookup.template" />
+    <EmbeddedResource Include="ExtensionsGenerator\Templates\GetRelatedSingleLookup.template" />
+    <EmbeddedResource Include="Templates\AttributeProperties.template" />
+    <EmbeddedResource Include="Templates\EntityClass.template" />
+    <EmbeddedResource Include="Templates\Options.template" />
+    <EmbeddedResource Include="Templates\OptionsClass.template" />
+    <EmbeddedResource Include="Templates\Property.template" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="NSubstitute" Version="2.0.2" />
+    <PackageReference Include="SharpZipLib" Version="0.86.0" />
+    <PackageReference Include="xunit" Version="2.2.0" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CrmSdk.CoreAssemblies" Version="8.2.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Niam.XRM.ECGenerator.Core\Niam.XRM.ECGenerator.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+    <!-- Test project tag. -->
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

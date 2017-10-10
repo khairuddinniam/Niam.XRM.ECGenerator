@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Niam.XRM.ECGenerator": {
+      "commandName": "Project",
+      "workingDirectory": "$(TargetDir)"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+﻿		[System.ComponentModel.DataAnnotations.Schema.Column("entity")][System.ComponentModel.DataAnnotations.KeyAttribute]
+		public readonly string entity1 = null;

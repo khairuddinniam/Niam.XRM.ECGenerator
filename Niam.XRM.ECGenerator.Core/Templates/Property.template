@@ -1,0 +1,2 @@
+﻿		{{property-attributes}}
+		public readonly {{property-type}} {{property-name}} = null;

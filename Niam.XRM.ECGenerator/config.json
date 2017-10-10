@@ -1,0 +1,5 @@
+﻿{
+  "connectionString": "AuthType=Office365;Username=username@company.com;Password=mypassword;Url=https://link.to.crm",
+  "namespace": "Niam.EntityClasses",
+  "generateExtensions": true
+}

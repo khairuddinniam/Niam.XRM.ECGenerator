@@ -1,0 +1,66 @@
+﻿using Niam.XRM.Framework.Interfaces.Data;
+
+namespace {{namespace}}
+{
+    public static class EntityBaseExt
+    {
+        /// <summary>
+        /// Related attribute: createdby. Lookup to entity: systemuser.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetCreatedBy<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : EntityBase => wrapper.GetRelated(e => e.CreatedBy, columnSet);
+
+        /// <summary>
+        /// Related attribute: createdonbehalfby. Lookup to entity: systemuser.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetCreatedByDelegate<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : EntityBase => wrapper.GetRelated(e => e.CreatedOnBehalfBy, columnSet);
+
+        /// <summary>
+        /// Related attribute: modifiedby. Lookup to entity: systemuser.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetModifiedBy<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : EntityBase => wrapper.GetRelated(e => e.ModifiedBy, columnSet);
+
+        /// <summary>
+        /// Related attribute: modifiedonbehalfby. Lookup to entity: systemuser.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetModifiedByDelegate<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : EntityBase => wrapper.GetRelated(e => e.ModifiedOnBehalfBy, columnSet);
+    }
+
+    public static class UserOrTeamEntityExt
+    {
+        /// <summary>
+        /// Related attribute: owningbusinessunit. Lookup to entity: businessunit.
+        /// </summary>
+        public static IEntityWrapper<BusinessUnit> GetOwningBusinessUnit<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<BusinessUnit> columnSet)
+            where T : UserOrTeamEntity => wrapper.GetRelated(e => e.OwningBusinessUnit, columnSet);
+
+        /// <summary>
+        /// Related attribute: owningteam. Lookup to entity: team.
+        /// </summary>
+        public static IEntityWrapper<Team> GetOwningTeam<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<Team> columnSet)
+            where T : UserOrTeamEntity => wrapper.GetRelated(e => e.OwningTeam, columnSet);
+
+        /// <summary>
+        /// Related attribute: owninguser. Lookup to entity: team.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetOwningUser<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : UserOrTeamEntity => wrapper.GetRelated(e => e.OwningUser, columnSet);
+
+        /// <summary>
+        /// Related attribute: ownerid. Lookup to entity: team.
+        /// </summary>
+        public static IEntityWrapper<Team> GetOwner<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<Team> columnSet)
+            where T : UserOrTeamEntity => wrapper.GetRelated(e => e.OwnerId, columnSet);
+
+        /// <summary>
+        /// Related attribute: ownerid. Lookup to entity: systemuser.
+        /// </summary>
+        public static IEntityWrapper<SystemUser> GetOwner<T>(this IEntityWrapperRelation<T> wrapper, IColumnSet<SystemUser> columnSet)
+            where T : UserOrTeamEntity => wrapper.GetRelated(e => e.OwnerId, columnSet);
+    }
+
+{{extension-classes}}
+}

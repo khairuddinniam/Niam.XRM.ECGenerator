@@ -1,0 +1,8 @@
+﻿            public enum xts_status
+            {
+                Open = 1,
+                Release = 2,
+                Open1 = 3,
+                Release1 = 4,
+                Release2 = 5
+            }

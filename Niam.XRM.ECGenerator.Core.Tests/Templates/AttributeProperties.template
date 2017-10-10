@@ -1,0 +1,4 @@
+﻿		
+		public string name = null;
+		
+		public EntityReference xts_coreid = null;

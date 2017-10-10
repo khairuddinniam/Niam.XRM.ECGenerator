@@ -1,0 +1,4 @@
+﻿            public enum {{enum-name}}
+            {
+{{enum-values}}
+            }

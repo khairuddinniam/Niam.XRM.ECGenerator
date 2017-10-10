@@ -1,0 +1,51 @@
+﻿using System;
+using Microsoft.Xrm.Sdk;
+
+namespace {{namespace}}
+{
+    [System.Runtime.Serialization.DataContractAttribute]
+    public abstract class EntityBase : Entity
+    {
+        protected EntityBase(string entityName) : base(entityName)
+        {
+        }
+
+		public DateTime? CreatedOn = null;
+        public DateTime? ModifiedOn = null;
+        public int? VersionNumber = null;
+
+        public EntityReference CreatedBy = null;
+        public EntityReference CreatedOnBehalfBy = null;
+        public int? ImportSequenceNumber = null;
+        public EntityReference ModifiedBy = null;
+        public EntityReference ModifiedOnBehalfBy = null;
+        public DateTime? OverriddenCreatedOn = null;
+        public OptionSetValue statecode = null;
+        public OptionSetValue statuscode = null;
+        public int? TimeZoneRuleVersionNumber = null;
+        public int? UTCConversionTimeZoneCode = null;
+    }
+
+	[System.Runtime.Serialization.DataContractAttribute]
+    public abstract class UserOrTeamEntity : EntityBase
+    {
+        protected UserOrTeamEntity(string entityName) : base(entityName)
+        {
+        }
+
+        public EntityReference OwningBusinessUnit = null;
+        public EntityReference OwningTeam = null;
+        public EntityReference OwningUser = null;
+        public EntityReference OwnerId = null;
+    }
+
+    [System.Runtime.Serialization.DataContractAttribute]
+    public abstract class OrganizationEntity : EntityBase
+    {
+        protected OrganizationEntity(string entityName) : base(entityName)
+        {
+        }
+    }
+
+{{contents}}
+}
