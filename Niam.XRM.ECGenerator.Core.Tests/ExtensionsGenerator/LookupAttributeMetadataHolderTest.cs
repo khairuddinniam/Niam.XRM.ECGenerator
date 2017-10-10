@@ -17,7 +17,7 @@ namespace Niam.XRM.ECGenerator.Core.Tests.ExtensionsGenerator
             Assert.Equal(expectedName, holder.GetMethodName(null));
         }
 
-        private static IEnumerable<object[]> GetGetMethodNameData()
+        public static IEnumerable<object[]> GetGetMethodNameData()
         {
             // Single lookup, attribute have label
             yield return new object[]
@@ -178,7 +178,7 @@ namespace Niam.XRM.ECGenerator.Core.Tests.ExtensionsGenerator
             Assert.Equal(expectedName, holder.GetMethodName(blacklist));
         }
 
-        private static IEnumerable<object[]> GetGetMethodNameWithBlackListData()
+        public static IEnumerable<object[]> GetGetMethodNameWithBlackListData()
         {
             // Single lookup, blacklist GetUserLabel
             yield return new object[]
