@@ -1,9 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xrm.Sdk.Messages;
+﻿using Microsoft.Xrm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Metadata;
-using NLog;
 using Niam.XRM.ECGenerator.Core.Config;
+using NLog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Niam.XRM.ECGenerator.Core
 {
@@ -47,7 +48,7 @@ namespace Niam.XRM.ECGenerator.Core
             };
 
             Logger.Info("Retrieving all entity metadata...");
-            var response = (RetrieveAllEntitiesResponse) service.Execute(request);
+            var response = (RetrieveAllEntitiesResponse)service.Execute(request);
             Logger.Info("All entity metadata retrieved.");
             return response.EntityMetadata;
         }

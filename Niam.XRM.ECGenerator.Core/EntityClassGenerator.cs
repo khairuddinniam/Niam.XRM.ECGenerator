@@ -1,7 +1,8 @@
-﻿using System.Linq;
-using System.Text;
-using Microsoft.Xrm.Sdk.Metadata;
+﻿using Microsoft.Xrm.Sdk.Metadata;
 using Niam.XRM.ECGenerator.Core.Templates;
+using System;
+using System.Linq;
+using System.Text;
 
 namespace Niam.XRM.ECGenerator.Core
 {
@@ -16,6 +17,10 @@ namespace Niam.XRM.ECGenerator.Core
 
         public string Generate()
         {
+            if (!Validate())
+            {
+                return "";
+            }
             var builder = new StringBuilder(Template.EntityClass);
             builder.Replace("{{logical-name}}", _entityMetadata.LogicalName);
             builder.Replace("{{schema-name}}", _entityMetadata.SchemaName);
@@ -26,6 +31,19 @@ namespace Niam.XRM.ECGenerator.Core
             builder.Replace("{{options-class}}", GenerateOptions());
 
             return builder.ToString();
+        }
+
+        private readonly string[] _excludeEntities = new[] { "entity", "ribbonclientmetadata" };
+
+        private bool Validate()
+        {
+            var notValid = _excludeEntities.Contains(_entityMetadata.LogicalName.ToLower());
+
+            if (notValid)
+            {
+                Console.WriteLine("Test");
+            }
+            return !notValid;
         }
 
         public string GenerateBaseClassName()
